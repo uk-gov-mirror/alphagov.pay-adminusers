@@ -196,6 +196,7 @@ public class UserEntity extends AbstractEntity {
         user.setDisabled(disabled);
         user.setSessionVersion(sessionVersion);
         user.setRoles(this.getRoles().stream().map(RoleEntity::toRole).collect(Collectors.toList()));
+        user.setBob();
 
         return user;
     }

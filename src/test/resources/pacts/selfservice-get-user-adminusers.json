@@ -22,6 +22,7 @@
           "Content-Type": "application/json"
         },
         "body": {
+          "bobs": "bob",
           "username": "existing-user",
           "email": "existing-user@example.com",
           "gateway_account_ids": [
@@ -48,6 +49,9 @@
           ]
         },
         "matchingRules": {
+          "$.body.bobs": {
+            "match": "type"
+          },
           "$.body.username": {
             "match": "type"
           },

@@ -47,6 +47,7 @@ public class User {
     private List<Role> roles = new ArrayList<>();
     private List<Link> links = new ArrayList<>();
     private Integer sessionVersion = 0;
+    private String bob;
 
     public static User from(Integer id, String externalId, String username, String password, String email,
                             List<String> gatewayAccountIds, List<String> serviceIds, String otpKey, String telephoneNumber) {
@@ -217,6 +218,15 @@ public class User {
 
     public void setLinks(List<Link> links) {
         this.links = links;
+    }
+
+    public void setBob() {
+        this.bob = "bob";
+    }
+
+    @JsonProperty("bob")
+    public String getBob() {
+        return bob;
     }
 
     /**
