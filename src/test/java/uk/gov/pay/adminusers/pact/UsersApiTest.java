@@ -3,7 +3,9 @@ package uk.gov.pay.adminusers.pact;
 import au.com.dius.pact.provider.junit.PactRunner;
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
+import au.com.dius.pact.provider.junit.loader.PactBroker;
 import au.com.dius.pact.provider.junit.loader.PactFolder;
+import au.com.dius.pact.provider.junit.loader.PactSource;
 import au.com.dius.pact.provider.junit.target.HttpTarget;
 import au.com.dius.pact.provider.junit.target.Target;
 import au.com.dius.pact.provider.junit.target.TestTarget;
@@ -28,7 +30,9 @@ import static uk.gov.pay.adminusers.fixtures.ServiceDbFixture.serviceDbFixture;
 
 @RunWith(PactRunner.class)
 @Provider("AdminUsers")
-@PactFolder("pacts")
+//@PactFolder("pacts")
+//@PactBroker(host = "192.168.99.100", port = "80", tags = {"expecting_bobs"})
+@PactSource(MyOwnPactLoader.class)
 public class UsersApiTest {
 
     @ClassRule
