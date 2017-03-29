@@ -65,6 +65,13 @@ notify:
   notificationBaseURL: ${NOTIFY_BASE_URL:-https://stubs.pymnt.localdomain/notify}
   secondFactorSmsTemplateId: ${NOTIFY_2FA_TEMPLATE_ID:-pay-notify-two-factor-template-id}
 
+pact:
+  host: ${PACT_BROKER_HOST}
+  port: ${PACT_BROKER_PORT:-80}
+  protocol: ${PACT_BROKER_PROTOCOL:-https}
+  tags:
+    - master
+
 graphiteHost: ${METRICS_HOST:-localhost}
 graphitePort: ${METRICS_PORT:-8092}
 

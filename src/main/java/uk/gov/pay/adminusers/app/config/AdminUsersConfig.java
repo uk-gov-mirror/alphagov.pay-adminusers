@@ -18,6 +18,9 @@ public class AdminUsersConfig extends Configuration {
     private DataSourceFactory dataSourceFactory;
 
     @Valid
+    private PactConfiguration pactConfiguration;
+
+    @Valid
     @NotNull
     private JPAConfiguration jpaConfiguration;
 
@@ -51,6 +54,11 @@ public class AdminUsersConfig extends Configuration {
     @JsonProperty("jpa")
     public JPAConfiguration getJpaConfiguration() {
         return jpaConfiguration;
+    }
+
+    @JsonProperty("pact")
+    public PactConfiguration getPactConfiguration() {
+        return pactConfiguration;
     }
 
     public String getGraphiteHost() {
