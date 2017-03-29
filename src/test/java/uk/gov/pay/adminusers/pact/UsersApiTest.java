@@ -3,8 +3,6 @@ package uk.gov.pay.adminusers.pact;
 import au.com.dius.pact.provider.junit.PactRunner;
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
-import au.com.dius.pact.provider.junit.loader.PactBroker;
-import au.com.dius.pact.provider.junit.loader.PactFolder;
 import au.com.dius.pact.provider.junit.loader.PactSource;
 import au.com.dius.pact.provider.junit.target.HttpTarget;
 import au.com.dius.pact.provider.junit.target.Target;
