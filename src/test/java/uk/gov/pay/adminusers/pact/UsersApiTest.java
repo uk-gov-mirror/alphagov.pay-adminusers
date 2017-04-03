@@ -9,8 +9,6 @@ import au.com.dius.pact.provider.junit.target.Target;
 import au.com.dius.pact.provider.junit.target.TestTarget;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
-import com.google.inject.AbstractModule;
-import com.google.inject.Guice;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -33,7 +31,7 @@ import static uk.gov.pay.adminusers.fixtures.ServiceDbFixture.serviceDbFixture;
 @Provider("AdminUsers")
 //@PactFolder("pacts")
 //@PactBroker(host = "192.168.99.100", port = "80", tags = {"expecting_bobs"})
-@PactSource(MyOwnPactLoader.class)
+@PactSource(ConfigurablePactLoader.class)
 public class UsersApiTest {
 
     @ClassRule
@@ -44,13 +42,6 @@ public class UsersApiTest {
 
     @BeforeClass
     public static void setUpService() throws Exception {
-        Guice.createInjector(new AbstractModule() {
-            @Override
-            protected void configure() {
-                requestStaticInjection(MyOwnPactLoader.class);
-            }
-        });
-
         target = new HttpTarget(app.getLocalPort());
         dbHelper = app.getDatabaseTestHelper();
         int serviceId = 12345;
